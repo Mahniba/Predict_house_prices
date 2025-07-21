@@ -16,9 +16,9 @@ INPUT_SIZE = scaler.mean_.shape[0]
 
 # Define the model architecture exactly as used during training
 model = nn.Sequential(
-    nn.Linear(INPUT_SIZE, 64),
+    nn.Linear(INPUT_SIZE, 32),
     nn.ReLU(),
-    nn.Linear(64, 1)
+    nn.Linear(32, 1)
 )
 
 # Load the trained weights
@@ -53,3 +53,5 @@ def predict():
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
 # Save the model architecture and weights
+# torch.save(model.state_dict(), 'model.pth')
+# optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
